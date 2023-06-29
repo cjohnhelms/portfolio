@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Helms</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/8ba9106cf5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="name"><a href="#">Christopher Helms</a></h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Help Me Out</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Linux Engineer</p>
+                <h1>Hi, I'm <span>Chris</span> from <br> Austin, TX.</h1>
+            </div>
+        </div>
+    </div>
+<!-- ---------------about--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./images/linux-terminal-ubuntu-sudo.avif" alt="Image not found.">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                        ulpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('certifications')">Industry Certifications</p>
+                    </div>
+                    <div class="tab-content active-tab" id="experience">
+                        <ul>
+                            <li><span>Systems Engineer</span><br>Scalability and Automation</li>
+                            <li><span>Junior Linux Engineer</span><br>Edge Compute Platform Management</li>
+                            <li><span>Application Support</span><br>Cloud Web Application & Data Storage</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>Austin Community College</span><br>AS Computer Science</li>
+                            <li><span>Texas A&M University</span><br>BA International Studies</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="certifications">
+                        <ul>
+                            <li><span>Red Hat</span><br>Certified Engineer</li>
+                            <li><span>Red Hat</span><br>Certified System Administrator</li>
+                            <li><span>CompTIA</span><br>A+, Network+</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-------skills------------->
+<div id="skills">
+    <div class="container">
+        <h1 class="sub-title">Skills</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-terminal"></i> 
+                <h2>Linux Administration</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-cloud"></i>
+                <h2>Cloud Systems</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-code-branch"></i>
+                <h2>Scripting</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-arrows-spin"></i><h2>Automation</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content")
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+</body>
+</html>
