@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     echo 'Testing..'
-                    sh 'docker run -d -p 8001:80 --name wifi docker.io/cjohnhelms/${NAME}:latest'
+                    sh 'docker run -d -p 8001:80 --name portfolio docker.io/cjohnhelms/${NAME}:latest'
                     try {
                         sh 'curl 192.168.1.101:8001'
                     } catch (err) {
