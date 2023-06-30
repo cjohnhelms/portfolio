@@ -11,14 +11,16 @@
     <div id="header">
         <div class="container">
             <nav>
-                <h1 class="name"><a href="#">Christopher Helms</a></h1>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Help Me Out</a></li>
+                <h1 class="name"><a href="#"><i class="fa-solid fa-c"></i> <i class="fa-solid fa-h"></i></a></h1>
+                <ul id="side-menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Help Me Out</a></li>
+                    <i class="fa-solid fa-circle-xmark small" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars small menu-icon" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Linux Engineer</p>
@@ -31,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="./images/linux-terminal-ubuntu-sudo.avif" alt="Image not found.">
+                    <img src="./images/linux-terminal-ubuntu-sudo.avif" class="ubuntu" alt="Image not found.">
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
@@ -44,7 +46,7 @@
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
-                        <p class="tab-links" onclick="opentab('certifications')">Industry Certifications</p>
+                        <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
                     </div>
                     <div class="tab-content active-tab" id="experience">
                         <ul>
@@ -57,6 +59,7 @@
                         <ul>
                             <li><span>Austin Community College</span><br>AS Computer Science</li>
                             <li><span>Texas A&M University</span><br>BA International Studies</li>
+                            <li><span><br><br></span></li>
                         </ul>
                     </div>
                     <div class="tab-content" id="certifications">
@@ -73,7 +76,7 @@
 <!-------skills------------->
 <div id="skills">
     <div class="container">
-        <h1 class="sub-title">Skills</h1>
+        <h1 class="subtitle">Skills</h1>
         <div class="services-list">
             <div>
                 <i class="fa-solid fa-terminal"></i> 
@@ -109,11 +112,73 @@
         </div>
     </div>
 </div>
+<!------------portfolio-------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="./images/Cloud-Computing.jpeg" alt="Image not found.">
+                <div class="layer">
+                    <h3>Cloud Providers</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./images/cicd.png" alt="Image not found.">
+                <div class="layer">
+                    <h3>Automation</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./images/iac.png" alt="Image not found.">
+                <div class="layer">
+                    <h3>Infrastructure as Code</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------help-------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Help Me Out</h1>
+                <p>Enter a name, email, and phone number. Doesn't have to be your real contact info, in fact I prefer it
+                    not be, but I will never contact you either way. This will go to a database, where I will eventually
+                    implement an API and be able to request data, and maybe get a laugh from a funny name or two.
+                </p>
+                <p class="emailtext"><i class="fa-solid fa-paper-plane"></i> cjohnhelms@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://github.com/cjohnhelms"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/christopher-j-helms/"><i class="fa-brands fa-linkedin"></i></i></a>
+                </div>
+                <a href="./files/resume.pdf" download class="btn">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="number" placeholder="Your Phone Number" required>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-content")
-    function opentab(tabname){
+    var sidemenu = document.getElementById("side-menu")
+    function opentab(tabname) {
         for(tablink of tablinks){
             tablink.classList.remove("active-link");
         }
@@ -122,6 +187,12 @@
         }
         event.currentTarget.classList.add("active-link")
         document.getElementById(tabname).classList.add("active-tab")
+    }
+    function openmenu() {
+        sidemenu.style.right = "0"
+    }
+    function closemenu() {
+        sidemenu.style.right = "-200px"
     }
 </script>
 </body>
