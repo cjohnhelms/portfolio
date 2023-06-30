@@ -33,7 +33,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                checkout poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/cjohnhelms/[portfolio']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '2d16a538-b1b9-4acc-8fdf-d9c17bc3f63e', url: 'https://github.com/cjohnhelms/portfolio']])
                 sh 'docker build -t docker.io/cjohnhelms/${NAME} .'
                 sh 'docker tag docker.io/cjohnhelms/${NAME}:latest docker.io/cjohnhelms/${NAME}:${VERSION}'
             }
